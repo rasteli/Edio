@@ -61,7 +61,7 @@ function App() {
           <div>SAVE</div>
         </button>
       </div>
-      <ModalElement value={value} />
+      <ModalElement />
     </Slate>
   )
 }

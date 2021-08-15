@@ -2,7 +2,7 @@ import api from "../../services/api"
 import transition from "../../utils/transition"
 import React, { useState } from "react"
 
-export default function ModalElement({ value }) {
+export default function ModalElement() {
   const [title, setTitle] = useState()
 
   function closeModal() {
@@ -18,7 +18,6 @@ export default function ModalElement({ value }) {
     const div = document.getElementById("editor").children[1]
     const article = {
       title,
-      body: value,
       html: div.outerHTML
     }
 
