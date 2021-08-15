@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+
+body {
+  background-color: #2d3546;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow-x: hidden;
+}
+
+#editor {
+  background: rgb(211, 211, 211);
+  color: black;
+  width: 80vw;
+  padding: 30px;
+  border-radius: 5px;
+  font-size: 20pt;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.422);
+  margin: auto;
+  margin-top: 15px;
+  position: relative;
+}
+
+#link {
+  color: #397a8b;
+}
+
+#toolbar {
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+
+#toolbar button {
+  margin-right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#quote {
+  margin: 30px;
+  padding: 15px;
+  border-left-style: solid;
+  border-left-width: 5px;
+  background: #7d7d7e80;
+  font-family: "Berkshire Swash";
+}
+
+#quote #icon {
+  margin-right: 15px;
+}
+
+.save-btn {
+  outline: none;
+  padding: 10px;
+  min-width: 100px;
+  max-width: 200px;
+  width: 9vw;
+  border: 3px solid #2d3546;
+  border-radius: 2px;
+  margin-right: 23px;
+  margin-top: 25px;
+  background: rgb(211, 211, 211);
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+
+.save-btn > div {
+  position: relative;
+  z-index: 1;
+  color: #2d3546;
+  font-size: 15pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transition: color 250ms;
+}
+
+.save-btn:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #2d3546;
+  transition: all 250ms ease-out;
+}
+
+.slider:before {
+  top: 0;
+  left: -100%;
+}
+
+.slider:hover:before {
+  left: 0;
+}
+
+.save-btn:hover div {
+  color: rgb(211, 211, 211);
+}

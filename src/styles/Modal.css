@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;400&display=swap");
+
+#bg {
+  position: absolute;
+  background: #000;
+  width: 100.1vw;
+  height: 99.9vh;
+  top: 0;
+  opacity: 0;
+  margin-left: -8px;
+  pointer-events: all;
+  z-index: 1;
+  visibility: hidden;
+  transition: opacity 750ms;
+}
+
+#modal {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  background: #ddd;
+  max-width: 380px;
+  width: 90vw;
+  height: 220px;
+  padding: 10px;
+  left: -50%;
+  margin-top: -100%;
+  border-radius: 20px;
+  transition: margin-top 350ms, visibility 1s;
+}
+
+label {
+  font-family: "Averia Serif Libre";
+}
+
+#modal label:first-of-type {
+  color: #141214;
+  font-size: 30pt;
+  font-weight: bold;
+  display: block;
+}
+
+#modal #title {
+  position: absolute;
+  margin-top: 25px;
+  width: 83%;
+  padding: 20px;
+  background: none;
+  border-radius: 10px;
+  border: 2px solid rgba(117, 117, 117, 0.867);
+  font-size: 15pt;
+  outline: none;
+  font-family: "Averia Serif Libre";
+}
+
+#modal #buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
+}
+
+#modal #buttons button {
+  padding: 10px 20px 10px 20px;
+  outline: none;
+  background: none;
+  border: 2px solid #2d3546;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 250ms;
+}
+
+#modal #buttons #save-btn {
+  background: #2d3546;
+}
+
+#modal #buttons #cancel-btn {
+  margin-right: 30px;
+}
+
+#modal #buttons #save-btn > label {
+  color: #dddd;
+}
+
+#modal #buttons button > label {
+  font-size: 15pt;
+  pointer-events: none;
+  transition: all 250ms;
+}
+
+#modal #buttons #cancel-btn:hover {
+  background-color: #2d3546;
+}
+
+#modal #buttons #save-btn:hover {
+  background-color: #dddd;
+}
+
+#modal #buttons #cancel-btn:hover label {
+  color: #dddd;
+}
+
+#modal #buttons #save-btn:hover label {
+  color: #2d3546;
+}
