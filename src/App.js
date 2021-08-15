@@ -8,11 +8,13 @@ import {
   DefaultElement,
   LinkElement,
   TitleElement,
-  QuoteElement
+  QuoteElement,
+  ModalElement
 } from "./components"
 
-import "./App.css"
-import api from "./services/api"
+import "./styles/App.css"
+import "./styles/Modal.css"
+import transition from "./utils/transition"
 
 function App() {
   const editor = useMemo(() => withReact(createEditor()), [])
@@ -43,27 +45,7 @@ function App() {
   }, [])
 
   const onClick = () => {
-    const title = window.prompt("Document title")
-    const div = document.getElementById("editor").children[1]
-
-    const article = {
-      title,
-      body: value,
-      html: div.outerHTML
-    }
-
-    api
-      .post("/articles", article)
-      .then(response => {
-        if (response.data.error) return window.alert(response.data.error)
-
-        return window.open(
-          `${api.defaults.baseURL}/download?title=${article.title}`
-        )
-      })
-      .catch(error => {
-        return window.alert(error)
-      })
+    transition("hidden", "visible", "0.6", "visible", "0")
   }
 
   return (
@@ -79,6 +61,7 @@ function App() {
           <div>SAVE</div>
         </button>
       </div>
+      <ModalElement value={value} />
     </Slate>
   )
 }
